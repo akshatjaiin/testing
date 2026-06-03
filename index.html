@@ -1,18 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" crossorigin="anonymous">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NovaFlow</title>
-  <link href="https://hist.in/" hreflang="x-default" rel="alternate">
+  <meta charset="UTF-8" crossorigin="anonymous" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" crossorigin="anonymous" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" crossorigin="anonymous" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" crossorigin="anonymous" />
+  <title>NovaFlow - CORS & Origin Testing Lab</title>
+  
+  <!-- Alternate language links with crossorigin -->
+  <link href="https://hist.in/" hreflang="x-default" rel="alternate" crossorigin="anonymous">
+  <link href="https://hi.hist.in/" hreflang="hi" rel="alternate" crossorigin="random">
 
-<link href="https://hi.hist.in/" hreflang="hi" rel="alternate">
+  <!-- Multilipi Script - PRESERVED WITH ORIGINAL SETTINGS -->
+  <script 
+    src="https://script-cdn.multilipi.com/static/JS/page_translations.js" 
+    multilipi-key="b47447dd-ea52-4f0d-a5ee-3375185296cc" 
+    mode="auto" 
+    data-pos-x="50" 
+    data-pos-y="50" 
+    crossorigin="anonymous" 
+    defer
+    referrerpolicy="strict-origin-when-cross-origin">
+  </script>
 
-<script src="https://script-cdn.multilipi.com/static/JS/page_translations.js" multilipi-key="b47447dd-ea52-4f0d-a5ee-3375185296cc" mode="auto" data-pos-x="50" data-pos-y="50" crossorigin="anonymous" defer>
-</script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- jQuery with all CORS attributes -->
+  <script 
+    src="https://code.jquery.com/jquery-3.6.0.min.js" 
+    crossorigin="anonymous" 
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPFijrQlT7f2KCMw=="
+    referrerpolicy="strict-origin-when-cross-origin"
+    crossorigin="random"
+    defer>
+  </script>
+
+  <!-- Google Fonts with various crossorigin modes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="random">
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" 
+    rel="stylesheet"
+    crossorigin="anonymous"
+    referrerpolicy="strict-origin-when-cross-origin">
+
+  <!-- Bootstrap CSS with crossorigin -->
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    crossorigin="anonymous"
+    crossorigin="random"
+    integrity="sha384-9ndCyUaIbzAi2FUarbnLutan7V7McqxjDRCmgNjRRyXjSliIVLTidZemes+AZtIEjG"
+    referrerpolicy="strict-origin-when-cross-origin">
+
+  <!-- Additional test scripts -->
+  <script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" 
+    crossorigin="random"
+    defer>
+  </script>
 
   <style>
     * {
@@ -56,6 +100,7 @@
       text-decoration: none;
       margin-left: 24px;
       transition: 0.3s;
+      cursor: pointer;
     }
 
     nav a:hover {
@@ -97,6 +142,7 @@
     .buttons {
       display: flex;
       gap: 16px;
+      flex-wrap: wrap;
     }
 
     .btn {
@@ -107,6 +153,7 @@
       font-size: 15px;
       font-weight: 600;
       transition: 0.3s;
+      crossorigin: random;
     }
 
     .primary {
@@ -171,6 +218,12 @@
       outline: none;
     }
 
+    .input-group input:focus,
+    .input-group textarea:focus {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
     .input-group textarea {
       resize: none;
       height: 120px;
@@ -217,6 +270,97 @@
       line-height: 1.6;
     }
 
+    /* CORS Testing Lab Styles */
+    .cors-lab {
+      background: rgba(0,0,0,0.4);
+      padding: 40px 8%;
+      border-top: 2px solid rgba(60,165,245,0.3);
+    }
+
+    .cors-lab h2 {
+      font-size: 32px;
+      margin-bottom: 30px;
+      color: #60a5fa;
+    }
+
+    .cors-tests {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .test-card {
+      background: rgba(255,255,255,0.06);
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .test-card h4 {
+      margin-bottom: 15px;
+      color: #60a5fa;
+      font-size: 16px;
+    }
+
+    .test-btn {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 8px;
+      background: #3b82f6;
+      color: white;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .test-btn:hover {
+      background: #2563eb;
+    }
+
+    .test-btn.danger {
+      background: #ef4444;
+    }
+
+    .test-btn.danger:hover {
+      background: #dc2626;
+    }
+
+    .test-output {
+      background: rgba(0,0,0,0.3);
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 3px solid #60a5fa;
+      margin-top: 10px;
+      font-size: 12px;
+      max-height: 200px;
+      overflow-y: auto;
+      font-family: 'Courier New', monospace;
+      color: #e0e7ff;
+    }
+
+    .test-output.error {
+      border-left-color: #ef4444;
+      color: #fca5a5;
+    }
+
+    .test-output.success {
+      border-left-color: #10b981;
+      color: #a7f3d0;
+    }
+
+    .cors-info {
+      background: rgba(59, 130, 246, 0.1);
+      border-left: 4px solid #3b82f6;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 15px 0;
+      color: #e0e7ff;
+    }
+
     footer {
       text-align: center;
       padding: 30px;
@@ -237,58 +381,64 @@
   </style>
 </head>
 
-<body>
+<body crossorigin="random">
 
-  <div class="bg"></div>
+  <div class="bg" crossorigin="anonymous"></div>
 
-  <header>
-    <div class="logo">NovaFlow</div>
+  <header crossorigin="random">
+    <div class="logo" crossorigin="anonymous">NovaFlow</div>
 
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Features</a>
-      <a href="#">Pricing</a>
-      <a href="#">Contact</a>
+    <nav crossorigin="random">
+      <a href="#" data-section="home" crossorigin="anonymous">Home</a>
+      <a href="#features" data-section="features" crossorigin="random">Features</a>
+      <a href="#cors-lab" data-section="cors-lab" crossorigin="anonymous">CORS Lab</a>
+      <a href="#contact" data-section="contact" crossorigin="random">Contact</a>
     </nav>
   </header>
 
-  <section class="hero">
+  <section class="hero" crossorigin="random">
 
-    <div class="hero-text">
-      <h1>Build Smarter <span>Digital Experiences</span></h1>
+    <div class="hero-text" crossorigin="anonymous">
+      <h1 crossorigin="random">Build Smarter <span crossorigin="anonymous">Digital Experiences</span></h1>
 
-      <p>
+      <p crossorigin="random">
         Launch modern products faster with a sleek platform designed for startups,
         creators, and ambitious teams.
       </p>
 
-      <div class="buttons">
-        <button class="btn primary">Get Started</button>
-        <button class="btn secondary">Live Demo</button>
+      <div class="buttons" crossorigin="anonymous">
+        <button class="btn primary" id="get-started-btn" crossorigin="random">Get Started</button>
+        <button class="btn secondary" id="live-demo-btn" crossorigin="anonymous">Live Demo</button>
       </div>
     </div>
 
-    <div class="form-card">
-      <h2>Join Waitlist</h2>
-      <p>Get early access and exclusive updates.</p>
-      <img src="https://i.pinimg.com/webp/736x/ef/2a/8d/ef2a8dfe67c2d940d09824737e36d133.webp" alt="Waitlist image" style="width:100%;border-radius:12px;margin-bottom:18px;">
-      <form>
-        <div class="input-group">
-          <label>Full Name</label>
-          <input type="text" placeholder="John Doe">
+    <div class="form-card" id="contact" crossorigin="random">
+      <h2 crossorigin="anonymous">Join Waitlist</h2>
+      <p crossorigin="random">Get early access and exclusive updates.</p>
+      <img 
+        src="https://i.pinimg.com/webp/736x/ef/2a/8d/ef2a8dfe67c2d940d09824737e36d133.webp" 
+        alt="Waitlist image" 
+        style="width:100%;border-radius:12px;margin-bottom:18px;"
+        crossorigin="anonymous"
+        crossorigin="random"
+        referrerpolicy="strict-origin-when-cross-origin">
+      <form id="waitlist-form" crossorigin="anonymous">
+        <div class="input-group" crossorigin="random">
+          <label for="fullname" crossorigin="anonymous">Full Name</label>
+          <input type="text" id="fullname" placeholder="John Doe" required crossorigin="random" crossorigin="anonymous">
         </div>
 
-        <div class="input-group">
-          <label>Email Address</label>
-          <input type="email" placeholder="john@example.com">
+        <div class="input-group" crossorigin="random">
+          <label for="email" crossorigin="anonymous">Email Address</label>
+          <input type="email" id="email" placeholder="john@example.com" required crossorigin="random">
         </div>
 
-        <div class="input-group">
-          <label>Message</label>
-          <textarea placeholder="Tell us about your idea..."></textarea>
+        <div class="input-group" crossorigin="random">
+          <label for="message" crossorigin="anonymous">Message</label>
+          <textarea id="message" placeholder="Tell us about your idea..." crossorigin="random" crossorigin="anonymous"></textarea>
         </div>
 
-        <button type="submit" class="submit-btn">
+        <button type="submit" class="submit-btn" crossorigin="random" crossorigin="anonymous">
           Submit Application
         </button>
       </form>
@@ -296,34 +446,413 @@
 
   </section>
 
-  <section class="features">
+  <section class="features" id="features" crossorigin="random">
 
-    <div class="feature">
-      <h3>Lightning Fast</h3>
-      <p>
+    <div class="feature" crossorigin="anonymous">
+      <h3 crossorigin="random">Lightning Fast</h3>
+      <p crossorigin="anonymous">
         Optimized infrastructure with blazing fast performance and scalability.
       </p>
     </div>
 
-    <div class="feature">
-      <h3>Modern UI</h3>
-      <p>
+    <div class="feature" crossorigin="random">
+      <h3 crossorigin="anonymous">Modern UI</h3>
+      <p crossorigin="random">
         Clean, elegant and responsive interface built for all devices.
       </p>
     </div>
 
-    <div class="feature">
-      <h3>Secure Platform</h3>
-      <p>
+    <div class="feature" crossorigin="anonymous">
+      <h3 crossorigin="random">Secure Platform</h3>
+      <p crossorigin="random">
         Enterprise-grade security and encrypted data protection by default.
       </p>
     </div>
 
   </section>
 
-  <footer>
-    © 2026 NovaFlow. All rights reserved.
+  <!-- CORS Testing Lab Section -->
+  <section class="cors-lab" id="cors-lab" crossorigin="anonymous">
+    <h2 crossorigin="random">🔐 CORS & Origin Testing Laboratory</h2>
+    <p style="margin-bottom: 30px; color: #cbd5e1;" crossorigin="anonymous">Test different CORS configurations and understand origin behavior</p>
+
+    <div class="cors-info" crossorigin="random">
+      <strong>Current Page Origin:</strong> <span id="current-origin" crossorigin="anonymous"></span><br>
+      <strong>Referrer Policy:</strong> strict-origin-when-cross-origin<br>
+      <strong>CORS Enabled:</strong> Yes (multiple modes testing)
+    </div>
+
+    <div class="cors-tests" crossorigin="anonymous">
+      <!-- Test 1: Anonymous CORS -->
+      <div class="test-card" crossorigin="random">
+        <h4 crossorigin="anonymous">Test 1: crossorigin="anonymous"</h4>
+        <button class="test-btn" id="test-anonymous" crossorigin="random">Fetch with Anonymous</button>
+        <div class="test-output" id="output-anonymous" crossorigin="anonymous"></div>
+      </div>
+
+      <!-- Test 2: Use Credentials -->
+      <div class="test-card" crossorigin="random">
+        <h4 crossorigin="anonymous">Test 2: crossorigin="use-credentials"</h4>
+        <button class="test-btn" id="test-credentials" crossorigin="random">Fetch with Credentials</button>
+        <div class="test-output" id="output-credentials" crossorigin="anonymous"></div>
+      </div>
+
+      <!-- Test 3: No CORS -->
+      <div class="test-card" crossorigin="random">
+        <h4 crossorigin="anonymous">Test 3: No crossorigin Attribute</h4>
+        <button class="test-btn danger" id="test-nocors" crossorigin="random">Fetch without CORS</button>
+        <div class="test-output" id="output-nocors" crossorigin="anonymous"></div>
+      </div>
+
+      <!-- Test 4: Strict Origin -->
+      <div class="test-card" crossorigin="random">
+        <h4 crossorigin="anonymous">Test 4: Referrer Policy Strict</h4>
+        <button class="test-btn" id="test-strict" crossorigin="random">Test Strict Origin</button>
+        <div class="test-output" id="output-strict" crossorigin="anonymous"></div>
+      </div>
+
+      <!-- Test 5: JSON-P Test -->
+      <div class="test-card" crossorigin="random">
+        <h4 crossorigin="anonymous">Test 5: jQuery AJAX with CORS</h4>
+        <button class="test-btn" id="test-jsonp" crossorigin="random">Test JSONP/CORS</button>
+        <div class="test-output" id="output-jsonp" crossorigin="anonymous"></div>
+      </div>
+
+      <!-- Test 6: Origin Header -->
+      <div class="test-card" crossorigin="random">
+        <h4 crossorigin="anonymous">Test 6: Check Current Origin</h4>
+        <button class="test-btn" id="test-origin" crossorigin="random">Display Origin Info</button>
+        <div class="test-output" id="output-origin" crossorigin="anonymous"></div>
+      </div>
+
+      <!-- Test 7: Multiple CORS Attributes -->
+      <div class="test-card" crossorigin="random">
+        <h4 crossorigin="anonymous">Test 7: Mixed CORS Modes</h4>
+        <button class="test-btn" id="test-mixed" crossorigin="random">Test Mixed Modes</button>
+        <div class="test-output" id="output-mixed" crossorigin="anonymous"></div>
+      </div>
+
+      <!-- Test 8: Custom Headers -->
+      <div class="test-card" crossorigin="random">
+        <h4 crossorigin="anonymous">Test 8: Custom Headers with CORS</h4>
+        <button class="test-btn" id="test-headers" crossorigin="random">Test Custom Headers</button>
+        <div class="test-output" id="output-headers" crossorigin="anonymous"></div>
+      </div>
+    </div>
+
+    <!-- Request/Response Monitor -->
+    <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1);" crossorigin="anonymous">
+      <h3 style="margin-bottom: 15px; color: #60a5fa;" crossorigin="random">📊 Request/Response Monitor</h3>
+      <div class="test-output" id="monitor-output" style="height: 300px;" crossorigin="anonymous">
+        Waiting for requests...
+      </div>
+      <button class="test-btn" id="clear-monitor" style="margin-top: 15px;" crossorigin="random">Clear Monitor</button>
+    </div>
+  </section>
+
+  <footer crossorigin="anonymous">
+    © 2026 NovaFlow. All rights reserved. | CORS Testing Lab v2.0 | Origin Testing Enabled
   </footer>
+
+  <!-- jQuery Testing Script with CORS -->
+  <script crossorigin="random" referrerpolicy="strict-origin-when-cross-origin">
+    // Display current origin immediately
+    document.getElementById('current-origin').textContent = window.location.origin + ' (' + window.location.protocol + '//' + window.location.host + ')';
+
+    // Fallback if jQuery doesn't load
+    if (typeof jQuery === 'undefined') {
+      console.error('jQuery failed to load! Check CORS settings.');
+      alert('⚠️ jQuery failed to load. Some tests may not work.');
+    }
+
+    $(document).ready(function() {
+      console.log('✓ jQuery loaded successfully!');
+      console.log('Current Page Origin:', window.location.origin);
+      console.log('Current Page Host:', window.location.host);
+      console.log('Current Protocol:', window.location.protocol);
+      console.log('CORS Testing Enabled:', true);
+
+      // Utility function to log to monitor
+      function logToMonitor(message, type = 'info') {
+        const monitor = $('#monitor-output');
+        const timestamp = new Date().toLocaleTimeString();
+        const color = type === 'error' ? '#fca5a5' : type === 'success' ? '#a7f3d0' : '#e0e7ff';
+        const logEntry = `<div style="color: ${color};">[${timestamp}] ${message}</div>`;
+        
+        monitor.append(logEntry);
+        monitor.scrollTop(monitor[0].scrollHeight);
+      }
+
+      // Test 1: Anonymous CORS
+      $('#test-anonymous').click(function() {
+        const output = $('#output-anonymous');
+        output.text('Fetching...').removeClass('success error');
+        
+        $.ajax({
+          url: 'https://jsonplaceholder.typicode.com/posts/1',
+          type: 'GET',
+          crossDomain: true,
+          xhrFields: {
+            withCredentials: false
+          },
+          headers: {
+            'X-Custom-Header': 'anonymous-request',
+            'X-Origin-Test': window.location.origin
+          },
+          success: function(data) {
+            output.addClass('success').text('✓ SUCCESS (Anonymous):\n' + JSON.stringify(data, null, 2).substring(0, 300) + '...');
+            logToMonitor('✓ Anonymous CORS request successful from ' + window.location.origin, 'success');
+          },
+          error: function(xhr, status, error) {
+            output.addClass('error').text('✗ ERROR: ' + error + '\nStatus: ' + status + '\nCORS may be blocked.');
+            logToMonitor('✗ Anonymous CORS failed: ' + error, 'error');
+          }
+        });
+      });
+
+      // Test 2: Use Credentials
+      $('#test-credentials').click(function() {
+        const output = $('#output-credentials');
+        output.text('Fetching with credentials...').removeClass('success error');
+        
+        $.ajax({
+          url: 'https://jsonplaceholder.typicode.com/posts/2',
+          type: 'GET',
+          crossDomain: true,
+          xhrFields: {
+            withCredentials: true
+          },
+          success: function(data) {
+            output.addClass('success').text('✓ SUCCESS (Credentials):\n' + JSON.stringify(data, null, 2).substring(0, 300) + '...');
+            logToMonitor('✓ Use-credentials CORS request successful', 'success');
+          },
+          error: function(xhr, status, error) {
+            output.addClass('error').text('✗ ERROR: ' + error + '\nCredentials may be blocked by server.');
+            logToMonitor('✗ Use-credentials CORS failed: ' + error, 'error');
+          }
+        });
+      });
+
+      // Test 3: No CORS
+      $('#test-nocors').click(function() {
+        const output = $('#output-nocors');
+        output.text('Attempting fetch without CORS...').removeClass('success error');
+        
+        $.ajax({
+          url: 'https://jsonplaceholder.typicode.com/posts/3',
+          type: 'GET',
+          crossDomain: false,
+          success: function(data) {
+            output.addClass('success').text('✓ Unexpectedly worked:\n' + JSON.stringify(data, null, 2).substring(0, 300) + '...');
+            logToMonitor('✓ No-CORS request worked (server allows it)', 'success');
+          },
+          error: function(xhr, status, error) {
+            output.addClass('error').text('✗ BLOCKED (Expected):\n' + error + '\nCORS headers missing or blocked.');
+            logToMonitor('✗ No-CORS request blocked (expected behavior)', 'error');
+          }
+        });
+      });
+
+      // Test 4: Strict Origin Policy
+      $('#test-strict').click(function() {
+        const output = $('#output-strict');
+        const info = `
+✓ STRICT ORIGIN POLICY ACTIVE:
+──────────────────────────────
+
+Referrer Policy: strict-origin-when-cross-origin
+
+Behavior:
+• Same-origin requests: Full URL sent
+• Cross-origin HTTPS: Only origin sent
+• Cross-origin HTTP: No referrer sent
+• Downgrade HTTPS→HTTP: No referrer sent
+
+Current Origin: ${window.location.origin}
+Can access: Same protocol & domain
+Cannot access: Different domain/protocol without CORS headers
+        `;
+        output.addClass('success').text(info);
+        logToMonitor('Referrer policy check: strict-origin-when-cross-origin', 'success');
+      });
+
+      // Test 5: JSONP/CORS Test
+      $('#test-jsonp').click(function() {
+        const output = $('#output-jsonp');
+        output.text('Testing with external CORS API...').removeClass('success error');
+        
+        $.ajax({
+          url: 'https://api.github.com/users/github',
+          type: 'GET',
+          dataType: 'json',
+          crossDomain: true,
+          headers: {
+            'Accept': 'application/vnd.github.v3+json',
+            'X-Origin': window.location.origin
+          },
+          success: function(data) {
+            output.addClass('success').text('✓ GitHub API (CORS-enabled):\n' + JSON.stringify(data, null, 2).substring(0, 400) + '...');
+            logToMonitor('✓ GitHub API CORS request successful', 'success');
+          },
+          error: function(xhr, status, error) {
+            output.addClass('error').text('✗ ERROR: ' + error + '\nGitHub API CORS failed.');
+            logToMonitor('✗ GitHub API request failed: ' + error, 'error');
+          }
+        });
+      });
+
+      // Test 6: Origin Information
+      $('#test-origin').click(function() {
+        const output = $('#output-origin');
+        const originInfo = `
+🌐 ORIGIN INFORMATION:
+──────────────────────────
+
+Protocol: ${window.location.protocol}
+Host: ${window.location.host}
+Origin: ${window.location.origin}
+Hostname: ${window.location.hostname}
+Port: ${window.location.port || '(default)'}
+Pathname: ${window.location.pathname}
+
+🔒 CORS & SECURITY HEADERS:
+──────────────────────────
+
+Referrer Policy: strict-origin-when-cross-origin
+Crossorigin Attr: anonymous / random (mixed)
+X-Frame-Options: (check server headers)
+Content-Security-Policy: (check server headers)
+
+💡 CROSS-ORIGIN REQUEST RULES:
+──────────────────────────
+
+✓ Same Origin: Full access (no CORS needed)
+✓ Different Domain: CORS headers + crossorigin="anonymous"
+✓ Different Protocol: Treated as different origin
+✓ Different Port: Treated as different origin
+⚠ HTTP → HTTPS: Downgrade blocked
+        `;
+        output.addClass('success').text(originInfo);
+        logToMonitor('✓ Origin info displayed', 'success');
+      });
+
+      // Test 7: Mixed CORS Modes
+      $('#test-mixed').click(function() {
+        const output = $('#output-mixed');
+        output.text('Testing multiple CORS modes...').removeClass('success error');
+        
+        const tests = [
+          { name: 'Anonymous', url: 'https://jsonplaceholder.typicode.com/posts/4' },
+          { name: 'Credentials', url: 'https://jsonplaceholder.typicode.com/posts/5' }
+        ];
+
+        let results = [];
+        let completed = 0;
+
+        tests.forEach(test => {
+          $.ajax({
+            url: test.url,
+            type: 'GET',
+            crossDomain: true,
+            xhrFields: { withCredentials: test.name === 'Credentials' },
+            success: function(data) {
+              results.push(`✓ ${test.name}: Success`);
+              completed++;
+              if (completed === tests.length) {
+                output.addClass('success').text(results.join('\n') + '\n\n✓ All mixed CORS modes tested');
+                logToMonitor('✓ Mixed CORS modes tested successfully', 'success');
+              }
+            },
+            error: function(xhr, status, error) {
+              results.push(`✗ ${test.name}: ${error}`);
+              completed++;
+              if (completed === tests.length) {
+                output.addClass('error').text(results.join('\n'));
+                logToMonitor('✗ Some CORS modes failed', 'error');
+              }
+            }
+          });
+        });
+      });
+
+      // Test 8: Custom Headers
+      $('#test-headers').click(function() {
+        const output = $('#output-headers');
+        output.text('Testing custom headers with CORS...').removeClass('success error');
+        
+        $.ajax({
+          url: 'https://httpbin.org/get',
+          type: 'GET',
+          crossDomain: true,
+          headers: {
+            'X-Custom-Origin': window.location.origin,
+            'X-CORS-Test': 'enabled',
+            'X-Referer-Policy': 'strict-origin-when-cross-origin',
+            'Accept': 'application/json'
+          },
+          success: function(data) {
+            output.addClass('success').text('✓ Custom Headers Sent:\n' + JSON.stringify(data.headers, null, 2).substring(0, 400) + '...');
+            logToMonitor('✓ Custom headers test successful', 'success');
+          },
+          error: function(xhr, status, error) {
+            output.addClass('error').text('✗ ERROR: ' + error + '\nCustom headers test failed.');
+            logToMonitor('✗ Custom headers test failed: ' + error, 'error');
+          }
+        });
+      });
+
+      // Clear Monitor
+      $('#clear-monitor').click(function() {
+        $('#monitor-output').text('Monitor cleared at ' + new Date().toLocaleTimeString() + '. Waiting for requests...');
+      });
+
+      // Form submission with validation
+      $('#waitlist-form').on('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = {
+          name: $('#fullname').val(),
+          email: $('#email').val(),
+          message: $('#message').val(),
+          origin: window.location.origin,
+          timestamp: new Date().toISOString()
+        };
+        
+        console.log('Form submitted with CORS:', formData);
+        logToMonitor('✓ Form submitted from ' + window.location.origin + ' with data: ' + JSON.stringify(formData), 'success');
+        
+        // Reset form
+        this.reset();
+        alert('✓ Thank you for joining our waitlist!\n\nOrigin: ' + window.location.origin + '\nCORS: Enabled');
+      });
+
+      // Button click handlers with CORS info
+      $('#get-started-btn').click(function() {
+        alert('Get Started clicked!\nOrigin: ' + window.location.origin + '\nCORS Testing: Enabled');
+        logToMonitor('Get Started button clicked from ' + window.location.origin, 'info');
+      });
+
+      $('#live-demo-btn').click(function() {
+        alert('Live Demo clicked!\nOrigin: ' + window.location.origin + '\nCrossorigin: random');
+        logToMonitor('Live Demo button clicked', 'info');
+      });
+
+      // Log all external resource loads
+      $(document).on('load', 'img, script, link', function() {
+        console.log('External resource loaded:', {
+          type: this.tagName,
+          src: this.src || this.href,
+          crossorigin: this.getAttribute('crossorigin'),
+          origin: window.location.origin
+        });
+      });
+
+      // Log initial page load info
+      logToMonitor('Page loaded successfully. jQuery ready. Origin: ' + window.location.origin, 'success');
+      logToMonitor('CORS Attributes: anonymous, random, strict-origin-when-cross-origin', 'info');
+      logToMonitor('Multilipi Script: ' + (typeof Multilipi !== 'undefined' ? 'Loaded' : 'Pending'), 'info');
+    });
+  </script>
 
 </body>
 </html>
